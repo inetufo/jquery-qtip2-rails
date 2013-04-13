@@ -1,12 +1,12 @@
 /*!
- * qTip2 - Pretty powerful tooltips - v2.0.1-4-g
+ * qTip2 - Pretty powerful tooltips - v2.0.1
  * http://qtip2.com
  *
- * Copyright (c) 2013 Craig Michael Thompson
+ * Copyright (c) 2012 Craig Michael Thompson
  * Released under the MIT, GPL licenses
  * http://jquery.org/license
  *
- * Date: Fri Jan 4 2013 04:05 GMT+0000
+ * Date: Mon Dec 31 2012 02:55 GMT+0000
  * Plugins: svg ajax tips modal viewport imagemap ie6
  * Styles: basic css3
  */
@@ -645,7 +645,7 @@ function QTip(target, options, id, attr)
 		}
 
 		// Adjust tooltip position on scroll of the window or viewport element if present
-		targets.window.add(posOptions.container).bind('scroll'+namespace, repositionMethod);
+		targets.window.bind('scroll'+namespace, repositionMethod);
 	}
 
 	function unassignEvents()
@@ -1002,8 +1002,7 @@ function QTip(target, options, id, attr)
 
 				// Hide other tooltips if tooltip is solo
 				if(!!opts.solo) {
-					(typeof opts.solo === 'string' ? $(opts.solo) : $(selector, opts.solo))
-						.not(tooltip).not(opts.target).qtip('hide', $.Event('tooltipsolo'));
+					$(selector, opts.solo).not(tooltip).qtip('hide', $.Event('tooltipsolo'));
 				}
 			}
 			else {
@@ -1169,7 +1168,7 @@ function QTip(target, options, id, attr)
 				event = MOUSE && MOUSE.pageX && (adjust.mouse || !event || !event.pageX) ? { pageX: MOUSE.pageX, pageY: MOUSE.pageY } :
 					(event && (event.type === 'resize' || event.type === 'scroll') ? cache.event :
 					event && event.pageX && event.type === 'mousemove' ? event :
-					(!adjust.mouse || options.show.distance) && cache.origin && cache.origin.pageX ? cache.origin :
+					!adjust.mouse && cache.origin && cache.origin.pageX && options.show.distance ? cache.origin :
 					event) || event || cache.event || MOUSE || {};
 
 				// Use event coordinates for position
@@ -1736,7 +1735,7 @@ if(!$.ui) {
 }
 
 // Set global qTip properties
-QTIP.version = '2.0.1-4-g';
+QTIP.version = '2.0.1';
 QTIP.nextid = 0;
 QTIP.inactiveEvents = 'click dblclick mousedown mouseup mousemove mouseleave mouseenter'.split(' ');
 QTIP.zindex = 15000;
