@@ -1,18 +1,16 @@
-/*!
- * qTip2 - Pretty powerful tooltips - v2.0.1
+/*
+ * qTip2 - Pretty powerful tooltips - v2.1.1
  * http://qtip2.com
  *
- * Copyright (c) 2012 Craig Michael Thompson
+ * Copyright (c) 2013 Craig Michael Thompson
  * Released under the MIT, GPL licenses
  * http://jquery.org/license
  *
- * Date: Mon Dec 31 2012 02:55 GMT+0000
- * Plugins: svg ajax tips modal viewport imagemap ie6
- * Styles: basic css3
+ * Date: Thu Jul 11 2013 02:03 GMT+0100+0100
+ * Plugins: None
+ * Styles: None
  */
-
-/* Core qTip styles */
-.qtip, .qtip{
+.qtip{
 	position: absolute;
 	left: -28000px;
 	top: -28000px;
@@ -25,6 +23,9 @@
 	line-height: 12px;
 
 	direction: ltr;
+
+	box-shadow: none;
+	padding: 0;
 }
 
 	.qtip-content{
@@ -72,7 +73,6 @@
 			display: block;
 			text-indent: -1000em;
 			direction: ltr;
-			vertical-align: middle;
 		}
 
 		.qtip-icon, .qtip-icon .ui-icon{
@@ -86,6 +86,7 @@
 				width: 18px;
 				height: 14px;
 
+				line-height: 14px;
 				text-align: center;
 				text-indent: 0;
 				font: normal bold 10px/13px Tahoma,sans-serif;
@@ -93,7 +94,6 @@
 				color: inherit;
 				background: transparent none no-repeat -100em -100em;
 			}
-
 
 /* Applied to 'focused' tooltips e.g. most recently displayed/interacted with */
 .qtip-focus{}
@@ -124,109 +124,5 @@
 	.qtip-default .qtip-titlebar .qtip-close{
 		border-color: #AAA;
 		color: #111;
-	}
-
-
-/*! Light tooltip style */
-.qtip-light{
-	background-color: white;
-	border-color: #E2E2E2;
-	color: #454545;
-}
-
-	.qtip-light .qtip-titlebar{
-		background-color: #f1f1f1;
-	}
-
-
-/*! Dark tooltip style */
-.qtip-dark{
-	background-color: #505050;
-	border-color: #303030;
-	color: #f3f3f3;
-}
-
-	.qtip-dark .qtip-titlebar{
-		background-color: #404040;
-	}
-
-	.qtip-dark .qtip-icon{
-		border-color: #444;
-	}
-
-	.qtip-dark .qtip-titlebar .ui-state-hover{
-		border-color: #303030;
-	}
-
-
-/*! Cream tooltip style */
-.qtip-cream{
-	background-color: #FBF7AA;
-	border-color: #F9E98E;
-	color: #A27D35;
-}
-
-	.qtip-cream .qtip-titlebar{
-		background-color: #F0DE7D;
-	}
-
-	.qtip-cream .qtip-close .qtip-icon{
-		background-position: -82px 0;
-	}
-
-
-/*! Red tooltip style */
-.qtip-red{
-	background-color: #F78B83;
-	border-color: #D95252;
-	color: #912323;
-}
-
-	.qtip-red .qtip-titlebar{
-		background-color: #F06D65;
-	}
-
-	.qtip-red .qtip-close .qtip-icon{
-		background-position: -102px 0;
-	}
-
-	.qtip-red .qtip-icon{
-		border-color: #D95252;
-	}
-
-	.qtip-red .qtip-titlebar .ui-state-hover{
-		border-color: #D95252;
-	}
-
-
-/*! Green tooltip style */
-.qtip-green{
-	background-color: #CAED9E;
-	border-color: #90D93F;
-	color: #3F6219;
-}
-
-	.qtip-green .qtip-titlebar{
-		background-color: #B0DE78;
-	}
-
-	.qtip-green .qtip-close .qtip-icon{
-		background-position: -42px 0;
-	}
-
-
-/*! Blue tooltip style */
-.qtip-blue{
-	background-color: #E5F6FE;
-	border-color: #ADD9ED;
-	color: #5E99BD;
-}
-
-	.qtip-blue .qtip-titlebar{
-		background-color: #D0E9F5;
-	}
-
-	.qtip-blue .qtip-close .qtip-icon{
-		background-position: -2px 0;
 	}
 
